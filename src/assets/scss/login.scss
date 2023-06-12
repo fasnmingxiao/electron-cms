@@ -1,0 +1,83 @@
+#content_login {
+  background-color: var(--theme-bg-color);
+  max-width: 1250px;
+  max-height: 860px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  backdrop-filter: url();
+  font-size: 15px;
+  font-weight: 500;
+  overflow: hidden;
+  border-radius: 14px;
+  form {
+    input {
+      border-radius: 5px;
+      padding: 8px 10px 5px 10px;
+      background-color: rgba(16, 18, 27, 0.8);
+      margin-bottom: 0.8em;
+      color: var(--theme-color);
+      border: none;
+    }
+  }
+  button {
+    border-radius: 50%;
+    border: none;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: rgba(16, 18, 27, 0.8);
+    color: var(--theme-color);
+    position: absolute;
+    right: -3em;
+  }
+}
+.background_image {
+  position: absolute;
+  z-index: -1;
+  background-image: url(https://wallpaperaccess.com/full/1689282.jpg);
+  background-position: center;
+  background-attachment: unset;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  filter: blur(10px);
+}
+
+.header-login {
+  color: var(--theme-color);
+  margin: 0.1em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1em;
+  font-weight: 300;
+  p {
+    padding: 0 0.2em 0 0;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  span {
+    padding-top: 0.1em;
+  }
+}
+
+.wp_form_login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .submit-loadding {
+    display: none !important;
+  }
+}
+.login-loading {
+  form {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .submit-loadding {
+    display: block !important;
+  }
+}
