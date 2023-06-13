@@ -4,14 +4,15 @@ import VuexPersistence from "vuex-persist";
 import Cookies from "js-cookie";
 
 const vuexCookie = new VuexPersistence({
-  restoreState: (key) => Cookies.get(key),
+  restoreState: (key) => JSON.parse(Cookies.get(key) ?? null),
   saveState: (key, state) =>
-    Cookies.set(key, state, {
+    Cookies.set(key, JSON.stringify(state), {
       expires: 3,
     }),
-  modules: ["AUTH"], //only save user module
+  modules: ["AUTH"],
   filter: (mutation) =>
-    mutation.type == "loginSuccess" || mutation.type == "loginFailure",
+    mutation.type == "AUTH/loginSuccess" ||
+    mutation.type == "AUTH/loginFailure",
 });
 
 const store = createStore({
